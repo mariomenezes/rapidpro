@@ -92,11 +92,11 @@ script:
   - flake8
 
   # compile messages
-  - cd temba && python ../manage.py compilemessages && cd ..
+  # - cd temba && python ../manage.py compilemessages && cd ..
 
-  # fail if there are changes
-  - git diff --numstat
-  - git diff --numstat | awk '$3 ~ /locale.*mo$/ { print "compilemessages needs to be rerun, see .travis.yml for command"; exit 1 }'  
+  # # fail if there are changes
+  # - git diff --numstat
+  # - git diff --numstat | awk '$3 ~ /locale.*mo$/ { print "compilemessages needs to be rerun, see .travis.yml for command"; exit 1 }'  
   
   # generate our locale messages
   - python manage.py makemessages -a -e haml,html,txt,py --ignore="env/*" --no-location --no-wrap | awk '/warning/ { print "makemessages contains warnings"; exit 1 }'

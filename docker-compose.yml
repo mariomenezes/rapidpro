@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: "3"
 
 services:
@@ -47,3 +48,22 @@ services:
         BACKEND_ADDRESS: rapidpro:8000
     ports:
       - 8080:80
+=======
+version: "3.3"
+
+services:
+
+  push_base:
+    image: ilha/rapidpro-base:base
+    build:
+      context: .
+      dockerfile: push_base.Dockerfile
+  push_prod:
+    image: ilha/rapidpro:prod
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+>>>>>>> production-rp-india-v5.1.12

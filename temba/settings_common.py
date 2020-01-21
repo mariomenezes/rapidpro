@@ -110,6 +110,8 @@ STATICFILES_FINDERS = (
     "compressor.finders.CompressorFinder",
 )
 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "your own secret key"
 
@@ -190,6 +192,7 @@ MIDDLEWARE = (
     "temba.middleware.OrgTimezoneMiddleware",
     "temba.middleware.ActivateLanguageMiddleware",
     "temba.middleware.OrgHeaderMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 )
 
 # security middleware configuration
@@ -970,6 +973,8 @@ else:
 
 COMPRESS_ENABLED = False
 COMPRESS_OFFLINE = False
+COMPRESS_CSS_FILTERS = ["compressor.filters.css_default.CssAbsoluteFilter", "compressor.filters.cssmin.CSSMinFilter"]
+COMPRESS_JS_FILTERS = ["compressor.filters.jsmin.JSMinFilter"]
 
 # build up our offline compression context based on available brands
 COMPRESS_OFFLINE_CONTEXT = []
@@ -1021,6 +1026,7 @@ CHANNEL_TYPES = [
     "temba.channels.types.highconnection.HighConnectionType",
     "temba.channels.types.hormuud.HormuudType",
     "temba.channels.types.hub9.Hub9Type",
+    "temba.channels.types.imimobile.ImiMobileType",
     "temba.channels.types.infobip.InfobipType",
     "temba.channels.types.jasmin.JasminType",
     "temba.channels.types.jiochat.JioChatType",
