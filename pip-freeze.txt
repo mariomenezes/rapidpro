@@ -111,7 +111,6 @@ twilio==6.24.0
 twython==3.5.0
 urllib3==1.21.1           # via botocore, elastic-apm, elasticsearch, requests, sentry-sdk
 vine==1.1.3               # via amqp
-whitenoise==4.1.3
 xlrd==1.0.0               # via pyexcel-xls, smartmin
 xlsxlite==0.2.0
 xlwt==1.2.0               # via pyexcel-xls, smartmin

@@ -32,7 +32,7 @@ RUN yarn install
 COPY pip-freeze.txt /app
 RUN pip install --quiet -r pip-freeze.txt
 
-RUN ln -s /app/temba/settings.py.dev /app/temba/settings.py
+RUN ln -s /app/temba/settings.py.prod /app/temba/settings.py
 
 COPY start /start
 RUN sed -i 's/\r$//g' /start
