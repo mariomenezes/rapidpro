@@ -2,7 +2,7 @@ FROM varnish:6.3
 
 ARG BACKEND_ADDRESS
 
-COPY varnish.default.vcl /etc/varnish/default.vcl
+COPY default.vcl /etc/varnish/default.vcl
 
 RUN chmod -R 755 /etc/varnish/
 
