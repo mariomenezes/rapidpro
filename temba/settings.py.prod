@@ -227,7 +227,3 @@ ELASTIC_APM = {
         "elasticapm.processors.sanitize_http_request_body",
     ),
 }
-
-
-# Add a new Channel Type to List
-CHANNEL_TYPES = (*CHANNEL_TYPES, "temba.channels.types.imimobile.ImiMobileType")
