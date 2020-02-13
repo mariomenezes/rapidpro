@@ -1,4 +1,6 @@
-#FROM 452158872079.dkr.ecr.eu-west-1.amazonaws.com/rapidpro:production-base-alpine-3.6
+ARG DOCKER_REGISTRY
+ARG BASE_IMAGE_NAME
+
 FROM ${DOCKER_REGISTRY}:${BASE_IMAGE_NAME} 
 
 COPY . .
